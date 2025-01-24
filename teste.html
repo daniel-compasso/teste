@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <title>Exemplo de leitura e escrita de texto</title>
+</head>
+<body>
+<input type="file">
+<button id="myBtn">Try it</button>
+<pre id="file"></pre>
+<script>
+    document.getElementById("myBtn").addEventListener("click", function () {
+        var reader = new FileReader();
+        reader.addEventListener('load', function () {
+            document.getElementById('file').innerText = this.result;
+        });
+        console.log(document.querySelector('input').files[0]);
+        reader.readAsText(document.querySelector('input').files[0]);
+    });
+</script>
+</body>
+</html>
